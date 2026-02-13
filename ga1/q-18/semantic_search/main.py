@@ -445,7 +445,30 @@ Documents:
         messages=[{"role": "user", "content": prompt}],
         temperature=0
     )
-
+# ===== RESPONSE STRUCTURE =====
+        # The response is a ChatCompletion object that looks like:
+        # {
+        #   "id": "chatcmpl-123abc",
+        #   "object": "chat.completion",
+        #   "created": 1677649420,
+        #   "model": "gpt-4o-mini",
+        #   "choices": [
+        #     {
+        #       "index": 0,
+        #       "message": {
+        #         "role": "assistant",
+        #         "content": "This text expresses optimistic emotions. The writing shows optimism and enthusiasm."
+        #       },
+        #       "finish_reason": "stop"
+        #     }
+        #   ],
+        #   "usage": {
+        #     "prompt_tokens": 50,
+        #     "completion_tokens": 20,
+        #     "total_tokens": 70
+        #   }
+        # }
+        #
     # Extract model output
     output_text = response.choices[0].message.content.strip()
 

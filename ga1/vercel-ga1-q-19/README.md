@@ -22,13 +22,16 @@ async def startup_event():
     global document_embeddings
     ...
 ```
-##
+
+## step-3
 ```bash
-cd vercel-q-19
-run just 
-vercel        #for preview can then deploy tp prod from the website
-vercel --prod   # for prod
+#run from the project folder
+vercel    #for preview deployment
+vercel --prod #for prod deployment
 ```
+OR
+
+go to vercel site-> create new projet->import from github or paste this project folder's github url-> set env vars -> deploy
 ## builds section
 ``` json
 {

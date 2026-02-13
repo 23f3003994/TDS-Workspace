@@ -4,4 +4,8 @@ openai>=2.20.0
 uvicorn>=0.40.0
 cohere>=5.20.5
 werkzeug>=3.1.5
+# redis==7.1.1
+upstash_redis
+
 # needed only if pushing to github and deploying to railway/vercel, cohere is not needed
+#redis only if main2.py is deployed to vercel

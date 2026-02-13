@@ -354,7 +354,7 @@ def run_pipeline(request: PipelineRequest):
                 "source": request.source
             }
 
-            stored, store_errors = store_result(item) # store this result in json file, srored is a boolean
+            stored, store_errors = store_result(item) # store this result in json file, stored is a boolean
             errors.extend(store_errors)
 
             results.append({
