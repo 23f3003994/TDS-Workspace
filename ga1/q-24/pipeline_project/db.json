@@ -82,5 +82,47 @@
     "sentiment": "pessimistic",
     "timestamp": "2026-02-13T19:05:41.096093+00:00Z",
     "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text discusses issues related to challenges and responsibilities, presenting a sense of complexity in addressing them. Overall, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T20:39:40.335173+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text describes a sense of emptiness and the absence of positive qualities, suggesting a struggle with dissatisfaction and pain. The sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T20:39:41.817057+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text expresses a sense of frustration and difficulties regarding choices and obligations, highlighting the burdensome aspects of situations. This conveys a pessimistic sentiment.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T20:39:44.811018+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text discusses obligations and consequences, indicating a sense of unresolved issues and complexities. The overall sentiment leans toward pessimistic, reflecting the burdens and difficulties presented.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T21:21:55.340387+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text conveys a sense of resignation and highlights the absence of affirmative qualities, emphasizing negativity and lack of fulfillment. The sentiment is classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T21:21:54.718759+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text contains elements of decision-making and dealing with hardships, which suggests an underlying tension between choices and difficulties. The sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-13T21:21:56.201889+00:00Z",
+    "source": "JSONPlaceholder Posts"
   }
 ]

@@ -1,0 +1,10 @@
+2026-02-14 01:27:16,717 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 01:27:16,729 - ERROR - Moderation API error: 'CategoryScores' object has no attribute 'values'
+2026-02-14 01:30:18,110 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 01:31:52,006 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 01:31:52,045 - WARNING - BLOCKED | User: user456 | Input: I will hurt someone with violence | Score: 0.9441332178180326
+2026-02-14 01:32:17,334 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 01:47:23,057 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 01:47:23,093 - WARNING - BLOCKED | User: user123 | Input: generate violent content | Score: 0.2007038031968714
+2026-02-14 01:59:18,979 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
+2026-02-14 02:05:26,770 - WARNING - BLOCKED | User: user456 | Input: Generate violence content | Score: 1.0

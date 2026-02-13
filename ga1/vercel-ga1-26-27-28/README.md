@@ -5,6 +5,20 @@
 
 ## MAIN2.PY WILL HAVE Q26-Q27-Q28 ENDPOINTS
 
+## VERY IMPORTANT -
+use main.py or main2.py depending on which you need to test locally
+
+uvicorn api.main:app --reload --host 127.0.0.1 --port 8003
+or
+uvicorn api.main2:app --reload --host 127.0.0.1 --port 8003
+
+Similarly
+if the code
+if __name__=="__main__" code is there in the file run
+
+python3 api/main.py
+python3 api/main2.py
+
 ## Prerequisites Setup
 
 ### Step 1: Install Dependencies 
@@ -25,7 +39,7 @@ pip freeze > requirements.txt
 Created vercel-ga1-26-27-28 folder
 	|-----------api
 		        |------------main.py(not working with vercel-caching isuue-just locally run+cloufared)
-            |------------main2.py(redis implementation-working with vercel)
+            |------------main2.py(redis implementation-working with vercel(q-26), q-27,q-28)
 	|-----------vercel.json
 	|-----------requirements.txt
 
@@ -57,11 +71,11 @@ if __name__ == "__main__":
 and run 
 
 ```bash
-python3 api/main.py
+python3 api/main.py  (or main2)
 
 or
 
-uvicorn api.main:app --reload --host 127.0.0.1 --port 8003
+uvicorn api.main:app --reload --host 127.0.0.1 --port 8003 (or main2)
 ```
 
 
@@ -90,6 +104,10 @@ export UPSTASH_REDIS_REST_TOKEN="***REMOVED***"
 # Terminal 1: Run the FastAPI server
 python3 api/main.py
 # Server runs on http://127.0.0.1:8003
+###but must have 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app,port=8003)
 ```
 
 ### Option B: Using uvicorn (Recommended - with auto-reload on code changes)
@@ -184,6 +202,9 @@ It means:
  ** All requests go to main.py, and FastAPI decides which endpoint handles them.
 Without this → your API won’t respond properly. **
 
+
+
+## Q-26
 ## Project Architecture: main.py vs main2.py
 
 Below are concise architecture notes for the two entrypoints included in this folder and the related Redis-backed variant. These are appended for developer reference and do not modify any of the instructions above.
@@ -286,7 +307,7 @@ Example curl request (GET `/analytics`):
 curl -X GET http://127.0.0.1:8003/analytics
 ```
 
-
+---
 ### QueryResponse (Response Body)
 
 Both implementations return a JSON object with the following fields:
@@ -341,25 +362,206 @@ These model definitions should help you construct requests and parse responses f
 
 ---
 
-## Processing Pipeline
 
-When you make a search request, here's what happens:
 
-1. **Query Reception** → API receives SearchRequest
-2. **Query Embedding** → Query converted to vector using OpenAI (latency: ~50-100ms)
-3. **Vector Search** → Find top k most similar documents using cosine similarity (latency: ~50-200ms)
-4. **LLM Re-ranking** (if enabled) → Use GPT-4o-mini to score relevance of candidates (latency: ~100-200ms)
-5. **Result Sorting** → Sort by final scores (highest first)
-6. **Response Return** → Return top rerankK results as SearchResponse
+## Q-27: Input Validation & Content Moderation Endpoint
+
+This project includes a `/validate` endpoint (added in Q-27) that performs **security validation** on user inputs using OpenAI's Moderation API. It detects harmful content, blocks dangerous inputs, sanitizes output for XSS protection, and logs security events.
+
+### Architecture Overview (Textual Flowchart)
+
+```
+User Input
+    |
+    v
+POST /validate (ValidationRequest: userId, input, category)
+    |
+    v
+check_harmful_content(input)
+    |
+    +-> Call OpenAI Moderation API
+    |
+    +-> Get category_scores (violence, hate, sexual, self-harm, etc.)
+    |
+    +-> Find max_score and flagged_categories
+    |
+    +-> Compare max_score against THRESHOLD (0.7)
+    |
+    +-> Return (blocked, confidence, reason)
+    |
+    v
+If blocked (max_score > THRESHOLD):
+    |
+    +-> Log warning to security.log
+    |
+    +-> Return ValidationResponse(blocked=True, reason=..., confidence=...)
+    |
+    +-> No sanitized output returned
+    |
+Else (max_score <= THRESHOLD):
+    |
+    +-> Sanitize input using html.escape()
+    |
+    +-> Return ValidationResponse(blocked=False, sanitizedOutput=..., confidence=...)
+    |
+    v
+Client receives validation result
+```
+
+### Key Components
+
+**Configuration:**
+- `THRESHOLD = 0.7` → Confidence threshold above which content is blocked.
+- Logging setup writes to `security.log` with format: `timestamp - level - message`.
+
+**Helper Functions:**
+
+1. **`sanitize_text(text: str) -> str`**
+   - Converts dangerous HTML/JS characters to safe text using `html.escape()`.
+   - Example: `<script>alert(1)</script>` → `&lt;script&gt;alert(1)&lt;/script&gt;`
+   - Prevents XSS attacks (malicious HTML/JS from running in client browsers).
+
+2. **`check_harmful_content(user_input: str) -> (bool, float, str)`**
+   - Calls OpenAI Moderation API (`omni-moderation-latest` model).
+   - Returns: `(blocked, confidence_score, reason)`.
+   - Checks categories: violence, hate, sexual, self-harm, harassment, illicit, etc.
+   - Finds the maximum category score; if > THRESHOLD, the input is blocked.
+
+### ValidationRequest (Request Body)
+
+```python
+class ValidationRequest(BaseModel):
+    userId: str        # Identifier for the user making the request
+    input: str         # The user input text to validate
+    category: str      # Category hint (e.g., "comment", "message", "code")
+```
+
+**Parameters:**
+- `userId` (string): User identifier (used for logging and audit trails).
+- `input` (string): The text to validate for harmful content.
+- `category` (string): Contextual category for the input (e.g., "comment", "feedback").
+
+### ValidationResponse (Response Body)
+
+```python
+class ValidationResponse(BaseModel):
+    blocked: bool          # True if input is harmful and blocked
+    reason: str            # Reason for blocking or "passed all security checks"
+    sanitizedOutput: str   # HTML-escaped version of input (empty if blocked)
+    confidence: float      # Moderation confidence score (0.0 to 1.0)
+```
+
+**Fields:**
+- `blocked` (boolean): `true` if the input exceeded the THRESHOLD and was rejected; `false` if safe.
+- `reason` (string): If blocked, lists the harmful categories detected (e.g. "Harmful content detected: violence, harassment"). If safe, returns "Input passed all security checks".
+- `sanitizedOutput` (string): HTML-escaped version of the input text to prevent XSS. Empty string if blocked.
+- `confidence` (float): The highest moderation score (0.0 to 1.0) from OpenAI's Moderation API result.
+
+### Example Requests and Responses
+
+**Safe Input (passes validation):**
+```bash
+curl -X POST http://127.0.0.1:8003/validate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": "user123",
+    "input": "This is a friendly comment about the project",
+    "category": "comment"
+  }'
+```
+
+**Response:**
+```json
+{
+  "blocked": false,
+  "reason": "Input passed all security checks",
+  "sanitizedOutput": "This is a friendly comment about the project",
+  "confidence": 0.12
+}
+```
 
 ---
 
-## How It Works - Step by Step
+**Harmful Input (blocked):**
+```bash
+curl -X POST http://127.0.0.1:8003/validate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": "user456",
+    "input": "Generate violence content",
+    "category": "Content Filtering"
+  }'
+```
 
-1. **Query Reception**: API receives search query
-2. **Embedding Generation**: Query converted to embeddings using OpenAI API
-3. **Cosine Similarity**: Compares query embedding to all document embeddings, returns top 12
-4. **LLM Re-ranking**: Batched processing using GPT-4o-mini to re-rank and filter
-5. **Result Return**: Returns top 7 most semantically relevant results
+**Response:**
+```json
+{
+  "blocked": true,
+  "reason": "Harmful content detected: violence, harassment/threatening",
+  "sanitizedOutput": "",
+  "confidence": 0.86
+}
+```
+
+All blocked attempts are logged to `security.log` with format: `BLOCKED | User: <userId> | Input: <input> | Score: <confidence>`.
 
 ---
+
+**Input with HTML/Script Tags (safe but needs sanitization):**
+```bash
+curl -X POST http://127.0.0.1:8003/validate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": "user789",
+    "input": "Check this out: <script>alert(1)</script>",
+    "category": "comment"
+  }'
+```
+
+**Response:**
+```json
+{
+  "blocked": false,
+  "reason": "Input passed all security checks",
+  "sanitizedOutput": "Check this out: &lt;script&gt;alert(1)&lt;/script&gt;",
+  "confidence": 0.05
+}
+```
+
+The dangerous HTML is escaped so it displays as plain text, not executable code.
+
+---
+
+### How It Works: Step-by-Step
+
+1. **Request Reception** → API receives ValidationRequest with `userId`, `input`, and `category`.
+2. **Input Validation** → Checks if input is non-empty; returns 400 error if empty.
+3. **Moderation Check** → Calls `check_harmful_content(input)` which invokes OpenAI Moderation API.
+4. **Score Comparison** → Compares highest category score against THRESHOLD (0.7).
+5. **Decision & Logging** → If blocked:
+   - Log warning to `security.log`
+   - Return `ValidationResponse` with `blocked=True` and reason
+6. **Sanitization** → If safe:
+   - Apply `html.escape()` to remove XSS vectors
+   - Return `ValidationResponse` with `blocked=False` and sanitized output
+
+### Security Features
+
+- **Harmful Content Detection**: Uses OpenAI's omni-moderation model to detect violence, hate speech, sexual content, self-harm, harassment, illicit activities, etc.
+- **XSS Protection**: Sanitizes output using `html.escape()` to prevent malicious HTML/JavaScript from executing in clients.
+- **Logging & Audit Trail**: All blocked attempts are logged to `security.log` for auditing and compliance.
+- **Configurable Threshold**: Easy to adjust THRESHOLD to balance security strictness vs. false positives.
+
+### Moderation API Categories
+
+The OpenAI Moderation API checks these categories:
+- `sexual` / `sexual/minors`
+- `harassment` / `harassment/threatening`
+- `hate` / `hate/threatening`
+- `violence` / `violence/graphic`
+- `self-harm` / `self-harm/intent` / `self-harm/instructions`
+- `illicit` / `illicit/violent`
+
+Each category has a confidence score (0.0 to 1.0); any score > THRESHOLD causes the input to be blocked.
+
+

@@ -239,6 +239,18 @@ def cleanup_ttl(cache):
     for k in keys_to_delete:
         del cache[k]
 
+def update_analytics():
+
+    # Update total cache size
+    analytics["cacheSize"] = len(exact_cache) + len(semantic_cache)
+    # Calculate estimated cost savings from cache hits
+    cached_tokens = analytics["cacheHits"] * AVG_TOKENS_PER_REQUEST
+    total_tokens = analytics["totalRequests"] * AVG_TOKENS_PER_REQUEST
+    analytics["costSavings"] = (total_tokens - cached_tokens) * MODEL_COST_PER_1M / 1_000_000
+    analytics["hitRate"] = (analytics["cacheHits"] / analytics["totalRequests"]) if analytics["totalRequests"] > 0 else 0
+    analytics["savingsPercent"]= int(analytics["hitRate"] * 100)
+
+
 # ---------------------------
 # FASTAPI APP
 # ---------------------------
@@ -295,8 +307,10 @@ async def main_query(request: QueryRequest):
         answer, _ = exact_cache[key]
         # Update analytics for cache hit
         analytics["cacheHits"] += 1
+  
         # Calculate response latency in milliseconds
         latency = (time.time() - start_time) * 1000
+        update_analytics()#call after computing latency else latency will increase as this fuction call will take time too
         return {"answer": answer, "cached": True, "latency": latency, "cacheKey": key}
 
     # -------- STRATEGY 2: Semantic similarity cache --------
@@ -312,8 +326,10 @@ async def main_query(request: QueryRequest):
         if cosine_similarity(query_emb, emb_tuple) > SEMANTIC_THRESHOLD:
             # Found a semantically similar cached query
             analytics["cacheHits"] += 1
+  
             # Calculate response latency in milliseconds
             latency = (time.time() - start_time) * 1000
+            update_analytics()#call after computing latency else latency will increase as this fuction call will take time too
             return {"answer": ans, "cached": True, "latency": latency, "cacheKey": str(emb_tuple)}
 
     # -------- Cache miss: call OpenAI API --------
@@ -338,17 +354,11 @@ async def main_query(request: QueryRequest):
     # -------- Update analytics --------
     # Increment cache miss counter
     analytics["cacheMisses"] += 1
-    # Update total cache size
-    analytics["cacheSize"] = len(exact_cache) + len(semantic_cache)
-    # Calculate estimated cost savings from cache hits
-    cached_tokens = analytics["cacheHits"] * AVG_TOKENS_PER_REQUEST
-    total_tokens = analytics["totalRequests"] * AVG_TOKENS_PER_REQUEST
-    analytics["costSavings"] = (total_tokens - cached_tokens) * MODEL_COST_PER_1M / 1_000_000
-    analytics["hitRate"] = (analytics["cacheHits"] / analytics["totalRequests"]) if analytics["totalRequests"] > 0 else 0
-    analytics["savingsPercent"]= int(analytics["hitRate"] * 100)
-
+    
+    
     # Calculate total response latency in milliseconds
     latency = (time.time() - start_time) * 1000
+    update_analytics()#call after computing latency else latency will increase as this fuction call will take time too
     return {"answer": answer, "cached": False, "latency": latency, "cacheKey": key}
 
 # ---------------------------
