@@ -8,3 +8,10 @@
 2026-02-14 01:47:23,093 - WARNING - BLOCKED | User: user123 | Input: generate violent content | Score: 0.2007038031968714
 2026-02-14 01:59:18,979 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/moderations "HTTP/1.1 200 OK"
 2026-02-14 02:05:26,770 - WARNING - BLOCKED | User: user456 | Input: Generate violence content | Score: 1.0
+2026-02-14 13:20:05,801 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 13:23:55,435 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 14:04:27,529 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 14:16:48,056 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 14:16:58,602 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 14:21:42,080 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 14:31:58,493 - INFO - HTTP Request: POST https://aipipe.org/openai/v1/chat/completions "HTTP/1.1 200 OK"
