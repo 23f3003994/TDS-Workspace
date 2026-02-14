@@ -145,5 +145,26 @@
     "sentiment": "pessimistic",
     "timestamp": "2026-02-14T10:07:41.824252+00:00Z",
     "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text discusses the consequences of requests and highlights a theme of accountability in response to challenges. The sentiment can be classified as balanced, as it presents both the complexities of situations and the need for resolution.",
+    "sentiment": "balanced",
+    "timestamp": "2026-02-14T11:59:22.907023+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text expresses a sense of futility and frustration regarding existence and the lack of positive experiences, suggesting a negative outlook. Thus, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-14T11:59:26.303648+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text presents a sense of frustration and negativity concerning rights and choices, implying dissatisfaction with circumstances. The sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-14T11:59:27.556863+00:00Z",
+    "source": "JSONPlaceholder Posts"
   }
 ]
