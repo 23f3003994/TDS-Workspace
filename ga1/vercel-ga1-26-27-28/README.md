@@ -571,6 +571,73 @@ Each category has a confidence score (0.0 to 1.0); any score > THRESHOLD causes 
 
 ## Q-28: Streaming LLM API for Real-Time Content Generation
 
+### project-architecture
+
+- using js cli (stream_cli.js)
+
++----------------+       POST /stream        +----------------+
+|                | -----------------------> |                |
+|  Node.js CLI   |                          |   FastAPI      |
+|  (stream_cli)  | <--- SSE chunks -------- |   /stream      |
+|                |                          | endpoint       |
++----------------+                          +----------------+
+        ^                                         ^  |
+        |                                         |  |
+        |                                         |  v
+        |                                  +----------------+
+        |                                  |  LLM API       |
+        |                                  |  (OpenAI)      |
+        |                                  |  stream=True   |
+        |                                  +----------------+
+        |
+        | (parses SSE, prints tokens)
+        v
+  Streaming tokens printed live
+
+Data Flow:
+1. CLI sends prompt → FastAPI
+2. FastAPI calls LLM API with streaming
+3. LLM sends token chunks → FastAPI
+4. FastAPI yields SSE chunks → CLI prints in real-time
+5. Stream ends when `[DONE]` is received
+
+
+- using curl
+         ┌───────────────────────────────┐
+       │         curl Client           │
+       │  curl -N -X POST https://... │
+       │  -H "Content-Type: application/json" │
+       │  -d '{"prompt":"...","stream":true}' │
+       └─────────────┬─────────────────┘
+                     │ POST /stream
+                     ▼
+       ┌───────────────────────────────┐
+       │         FastAPI Server        │
+       │         /stream endpoint      │
+       │  - Receives JSON prompt       │
+       │  - Calls async stream_llm()   │
+       │  - Yields SSE chunks          │
+       └─────────────┬─────────────────┘
+                     │ stream SSE chunks
+                     ▼
+       ┌───────────────────────────────┐
+       │           LLM API             │
+       │       (OpenAI GPT-4o-mini)   │
+       │      stream=True enabled      │
+       │  - Sends token chunks one-by-one │
+       └───────────────────────────────┘
+
+
+Data Flow:
+1. curl sends POST request with prompt → FastAPI
+2. FastAPI calls LLM API with stream=True
+3. LLM returns token chunks → FastAPI
+4. FastAPI formats each chunk as SSE → streams back to curl
+5. curl prints each chunk live
+6. `[DONE]` marks the end of the stream
+
+
+
 
 You can (and SHOULD) test your streaming endpoint in **two ways**:
 
