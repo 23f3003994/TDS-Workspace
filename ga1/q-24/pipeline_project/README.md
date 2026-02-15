@@ -1,4 +1,6 @@
-# Pipeline Project - Running Guide
+# Build an AI-Powered Data Pipeline
+
+## Pipeline Project - Running Guide
 
 ## Project Architecture
 

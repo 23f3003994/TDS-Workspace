@@ -1,4 +1,5 @@
-# IoT Sensor Data Compression
+# Refactor JSON for Compression
+## IoT Sensor Data Compression
 
 ## Task
 

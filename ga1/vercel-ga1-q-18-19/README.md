@@ -1,4 +1,4 @@
-
+# Q-18: Build Semantic Search with Re-ranking & Q-19: Vector Databases
 ## Final Deployment Structure for Vercel
 
 ## step- 1

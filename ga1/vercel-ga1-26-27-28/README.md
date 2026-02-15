@@ -204,7 +204,8 @@ Without this → your API won’t respond properly. **
 
 
 
-## Q-26
+#  Q-26: Optimize AI System with Caching Strategies
+
 ## Project Architecture: main.py vs main2.py
 
 Below are concise architecture notes for the two entrypoints included in this folder and the related Redis-backed variant. These are appended for developer reference and do not modify any of the instructions above.
@@ -364,7 +365,7 @@ These model definitions should help you construct requests and parse responses f
 
 
 
-## Q-27: Input Validation & Content Moderation Endpoint
+# Q-27: Validate and Sanitize AI System Inputs/Outputs
 
 This project includes a `/validate` endpoint (added in Q-27) that performs **security validation** on user inputs using OpenAI's Moderation API. It detects harmful content, blocks dangerous inputs, sanitizes output for XSS protection, and logs security events.
 
@@ -569,7 +570,7 @@ Each category has a confidence score (0.0 to 1.0); any score > THRESHOLD causes 
 
 
 
-## Q-28: Streaming LLM API for Real-Time Content Generation
+# Q-28: Implement Streaming LLM Response Handler
 
 ### project-architecture
 
