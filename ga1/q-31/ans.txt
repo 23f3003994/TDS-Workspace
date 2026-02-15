@@ -1,0 +1,15 @@
+(the image was automatically downloaded in png format)
+
+Tried many
+Original-image(7kb)
+
+cwebp -lossless -z 9 -m 6 original.png -o webp_compressed.webp     ---->230B   (passes the question)
+
+(failed answers)
+zopflipng -m original.png zopflipng_compressed.png  ---->515B
+pngquant 4 original.png -o pngquant_4_compressed.png  ---->274 B  (not passing the qstn though below 400B, saying pixels don’t match)
+pngquant --speed 1 --quality 100-100 original.png --output pngquant_compressed.png ---->525 B
+optipng -o7 original.png -out opting_compressed.png ---->698 B
+pngcrush -brute -reduce original.png pngcrush_compressed.png   ----> 1.6K    
+
+ls -lh (to see file sizes)

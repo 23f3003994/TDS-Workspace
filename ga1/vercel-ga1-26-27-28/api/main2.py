@@ -656,10 +656,10 @@ async def stream_llm(prompt: str)-> AsyncGenerator[str, None]:
             model="gpt-3.5-turbo",  #  Faster model
             messages=[{
                     "role": "system",
-                    "content": "You are a helpful assistant that provides detailed, well-structured responses."
+                    "content": "Respond quickly"
                 },{"role": "user", "content": prompt}],
             stream=True,  # CRITICAL: Enable chunk-by-chunk streaming
-            max_tokens=1500 ,# Limit response length (safety + cost control) ensure we can generate 1150+ chars
+            max_tokens=1300 ,# Limit response length (safety + cost control) ensure we can generate 1150+ chars
             temperature=1.0,  # ← Higher = faster (less "thinking")(throughput was 26tokens/s we need 33 tokens/s so temp added)
         )
         chunk_count = 0  # Counter for debugging

@@ -166,5 +166,89 @@
     "sentiment": "pessimistic",
     "timestamp": "2026-02-14T11:59:27.556863+00:00Z",
     "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text appears to express a sense of inevitability and consequence regarding challenges and issues faced. Overall, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-14T17:43:49.294360+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text describes a scenario involving suffering, negligence, and lack of accountability. The overall sentiment leans toward pessimistic, highlighting negative aspects of existence.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-14T17:43:51.120281+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text expresses a sense of frustration and conflict regarding choices and suffering. The sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-14T17:43:50.072549+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text seems to discuss issues of responsibility and consequences, indicating a potential focus on challenges or grievances. Therefore, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:23:25.708433+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text presents a mix of concepts, discussing experiences and feelings of pain and dissatisfaction while hinting at an absence of responsibility. The overall sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:23:27.339006+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text expresses a sense of entitlement to rights and may imply frustrations related to burdens and accusations. The sentiment can be classified as pessimistic due to the focus on difficulties and negative experiences.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:23:29.040787+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text discusses the challenges and complexities of certain issues without providing a clear resolution or positive outlook. The sentiment is classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:25:25.181656+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text presents a view that lacks certainty and expresses dissatisfaction with various aspects of life, suggesting a more negative outlook. Thus, the sentiment classified is pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:25:26.630213+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text presents a sense of discontent and frustration with the notions of choice and pain, indicating negative experiences. Therefore, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T04:25:28.241453+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "analysis": "The text appears to describe various elements of a situation that includes both challenges and potential outcomes, suggesting a complex scenario. The sentiment can be classified as balanced.",
+    "sentiment": "balanced",
+    "timestamp": "2026-02-15T05:00:27.216460+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    "analysis": "The text presents a perspective that emphasizes a lack of fulfillment and disappointment regarding life and its experiences. The sentiment is classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T05:00:28.378159+00:00Z",
+    "source": "JSONPlaceholder Posts"
+  },
+  {
+    "original": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "analysis": "The text expresses a sense of frustration and dissatisfaction regarding various situations, highlighting negative experiences and burdens. Overall, the sentiment can be classified as pessimistic.",
+    "sentiment": "pessimistic",
+    "timestamp": "2026-02-15T05:00:30.211921+00:00Z",
+    "source": "JSONPlaceholder Posts"
   }
 ]
