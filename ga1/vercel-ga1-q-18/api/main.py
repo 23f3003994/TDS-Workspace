@@ -27,10 +27,10 @@ openai.api_base = os.environ.get("OPENAI_BASE_URL", "https://aipipe.org/openai/v
 # Initialize Cohere # for reranking ..actually can use the same for vector similarity, compute embeddings too
 co = cohere.Client(os.environ.get("COHERE_API_KEY", "")) #free account key setup
 
-#export COHERE_API_KEY=***REMOVED***
+#export COHERE_API_KEY=#############################3
 
 #must set them
-# export OPENAI_API_KEY=***REMOVED***
+# export OPENAI_API_KEY=##############################################
 # export OPENAI_BASE_URL=https://aipipe.org/openai/v1
 
 

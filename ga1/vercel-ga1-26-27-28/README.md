@@ -84,15 +84,15 @@ Before running, you MUST set these environment variables:
 
 ```bash
 # On PowerShell (Windows)
-$env:OPENAI_API_KEY="***REMOVED***"
+$env:OPENAI_API_KEY="##########################################"
 $env:OPENAI_BASE_URL="https://aipipe.org/openai/v1"
 
 # On Linux/Mac (bash/zsh)
-export OPENAI_API_KEY="***REMOVED***"
+export OPENAI_API_KEY="############################################"
 export OPENAI_BASE_URL="https://aipipe.org/openai/v1"
 
-export UPSTASH_REDIS_REST_URL="***REMOVED***"
-export UPSTASH_REDIS_REST_TOKEN="***REMOVED***"
+export UPSTASH_REDIS_REST_URL="############################################"
+export UPSTASH_REDIS_REST_TOKEN="############################################"
 ```
 
 ---
