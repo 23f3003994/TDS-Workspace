@@ -1,10 +1,10 @@
 name: Cache Demo
 
 on:
-  push:
+  # push:  # if i keep this it will urn automatically too on every push to the repository, which is not what we want for this demo
     
-    branches:
-      - main  # Or whatever branch you want to trigger this workflow
+  #   branches:
+  #     - main  # Or whatever branch you want to trigger this workflow
   workflow_dispatch:   # This enables manual trigger from GitHub UI, it wont run automatically on every push
 
 jobs:
