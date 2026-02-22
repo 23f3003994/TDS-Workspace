@@ -1,0 +1,4 @@
+fastapi 
+uvicorn
+ python-multipart #required to accept multipart/form-data requests
+ pandas #for CSV parsing and stats

@@ -6,6 +6,8 @@ node_modules/
 .env.local
 .env.*.local
 
+ga2/q-19/.env
+#for the client ID and secret, which should not be committed to version control
 
 
 # Logs

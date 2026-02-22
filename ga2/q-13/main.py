@@ -37,4 +37,4 @@ def get_students_or_by_class(class_list: Optional[List[str]] = Query(default=Non
 import uvicorn
 
 if __name__ == "__main__":
-    uvicorn.run(app,port=8000)
+    uvicorn.run(app,port=8004)
