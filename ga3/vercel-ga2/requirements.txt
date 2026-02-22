@@ -1,0 +1,4 @@
+fastapi>=0.128.8
+openai>=2.20.0
+uvicorn>=0.40.0
+pydantic>=2.0.0 #v2 is required for Literal and Field to work as used
