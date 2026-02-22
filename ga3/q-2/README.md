@@ -5,7 +5,7 @@ vercel app of this is in vercel-ga2
 ## project architecture
 
 Request flow:
-
+```
 Client
   │
   ▼
@@ -21,7 +21,7 @@ Pydantic (SentimentResponse validates output)
   ▼
 JSON Response  ──►  Client
 { "sentiment": "positive", "rating": 5 }
-
+```
 ## Prerequisites Setup
 
 ### Step 1: Install Dependencies
@@ -55,7 +55,7 @@ export OPENAI_BASE_URL="https://aipipe.org/openai/v1"
 ---
 
 ## Running Locally
-(I used option A, )
+(I used option A )
 
 
 
@@ -87,7 +87,7 @@ uv run main.py
 ### Step 1: Verify Server is Running
 Open browser and go to: =`http://127.0.0.1:8001/docs` (Swagger UI) and check the /comment endpoint
 
-### Step 2: Test the /similarity endpoint
+### Step 2: Test the  endpoint
 ```bash
 Test using curl:
 
