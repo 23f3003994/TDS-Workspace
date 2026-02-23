@@ -1,6 +1,6 @@
 # TDS-Workspace
 
-
+[![Daily Repo Update](https://github.com/23f3003994/TDS-Workspace/actions/workflows/daily-update.yml/badge.svg)](https://github.com/23f3003994/TDS-Workspace/actions/workflows/daily-update.yml)
 
 ## Final Deployment Structure for Vercel
 
