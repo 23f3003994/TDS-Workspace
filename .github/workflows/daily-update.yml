@@ -5,6 +5,10 @@ on:
     - cron: '30 2 * * *'  # runs daily at 02:30 UTC
   workflow_dispatch:      # allows manual trigger
 
+permissions:
+  contents: write #this is required to allow the workflow to push changes back to the repository
+  #else The GitHub Actions bot tries to push a commit but as it does NOT have write permission to your repo, the push fails with an error 
+
 jobs:
   update-repo:
     runs-on: ubuntu-latest
