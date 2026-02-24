@@ -21,3 +21,5 @@ Thumbs.db
 
 # Vercel / deployment artifacts
 .vercel/
+
+**/venv/
