@@ -22,4 +22,4 @@ jobs:
           playwright install
 
       - name: Run Playwright Scraper - 23f3003994@ds.study.iitm.ac.in  # astep with my email ini its name
-        run: python scrape_tables.py
+        run: python ga3/q-13/scrape_tables.py
