@@ -1,6 +1,22 @@
 # Gemini Multi-Page PDF Analysis
 
+### Project Architecture
+```
+[Local PDF File]
+      │
+      ▼
+[GenAI Client: client.files.upload()]
+      │  (poll until ACTIVE)
+      ▼
+[Gemini Files API]
+      │  (analyzes PDF pages, text, tables)
+      ▼
+[Gemini LLM: generate_content]
+      │  (prompted to extract Jan 10 -amount, convert doolars,dollar,USD→Rs)
+      ▼
+[Structured JSON Output] ---> Summed in Python → Total Expense
 
+```
 ```bash
 pip install google-genai
 export GEMINI_API_KEY="your_key_here"
