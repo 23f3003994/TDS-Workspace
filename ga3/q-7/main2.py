@@ -1,3 +1,7 @@
+# sometimes gooogle gemini model in main.py says its not available in my region when i use openrouter and gemini model itself
+#here i am using another model using gemini-api-key ffrom google studio
+# this works but quota gets exhausted fast
+
 """
 YouTube Transcript Search API
 
@@ -15,7 +19,7 @@ import re
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from openai import OpenAI
+from google import genai
 from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled, VideoUnavailable
 from urllib.parse import urlparse, parse_qs
 
@@ -23,10 +27,8 @@ from urllib.parse import urlparse, parse_qs
 app = FastAPI()
 
 # Initialize OpenAI client with custom base URL for Gemini API access
-client = OpenAI(
-    api_key=os.getenv("AIPIPE_TOKEN"),
-    base_url="https://aipipe.org/openrouter/v1"
-)
+client = genai.Client()
+#export GEMINI_API_KEY="your_api_key_here" from .env file
 
 # Configure CORS middleware to allow cross-origin requests from all origins
 # This is necessary for browser-based API calls
@@ -141,29 +143,26 @@ def ask_gemini(transcript_text: str, topic: str) -> str:
     Raises:
         Exception: If the API call fails
     """
-    response = client.chat.completions.create(
-        model="google/gemini-2.5-flash-lite", # earlier i used "google/gemini-2.0-flash-lite-001" but it was giving error at times saying that is not available in my region
-        messages=[
-            {
-                "role": "user",
-                "content": f"""Here is a YouTube transcript with timestamps:
 
-{transcript_text}
+    prompt = f"""Here is a YouTube transcript with timestamps:
 
-Find the first timestamp where this is spoken: "{topic}"
+    {transcript_text}
 
-Reply with ONLY the timestamp in HH:MM:SS format. Nothing else. Example: 00:05:47"""
-            }
-        ]
+    Find the first timestamp where this is spoken: "{topic}"
+
+    Reply with ONLY the timestamp in HH:MM:SS format. Nothing else.
+    Example: 00:05:47
+    """
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",  # or gemini-1.5-flash / gemini-2.0-flash-lite
+        contents=prompt
     )
-    return response.choices[0].message.content.strip()
+
+    return response.text.strip()
 
 
 @app.post("/ask")
 async def ask(request: AskRequest):
-    #just hardcoding the answer (i got this ans when i ran it with gemini model some times)
-    #  coz gemini model not working properly not code issue, but some gemini model issue..i could switch to another gpt model..can try it ..i am too lazy to do it 
-    return  {"timestamp":"00:10:15","video_url":"https://youtu.be/xxpc-HPKN28","topic":"And those variables would be your data. But if you chose samples, that you know, just"}
     """
     Search a YouTube video transcript for a specific topic.
     
@@ -235,60 +234,3 @@ async def ask(request: AskRequest):
         "topic": request.topic
     }
 
-
-## earlier simpler version of above code without proper error handling (but this worked too)
-
-# def extract_video_id(url: str) -> str:
-#     # handles youtu.be/xxx and youtube.com/watch?v=xxx
-#     parsed = urlparse(url)
-#     if parsed.hostname == "youtu.be":
-#         return parsed.path[1:]
-#     return parse_qs(parsed.query)["v"][0]
-
-
-# @app.post("/ask")
-# async def ask(request: AskRequest):
-#     video_id = extract_video_id(request.video_url)
-#     ytt = YouTubeTranscriptApi()
-#     transcript = ytt.fetch(video_id, languages=["en-US", "en"])#languages added coz the input given from portal  was in en-US , when i debugged
-
-#     # First try exact string search
-#     for entry in transcript:
-#         if request.topic.lower() in entry.text.lower():
-#             seconds = int(entry.start)
-#             timestamp = f"{seconds//3600:02}:{(seconds%3600)//60:02}:{seconds%60:02}"
-#             return {
-#                 "timestamp": timestamp,
-#                 "video_url": request.video_url,
-#                 "topic": request.topic
-#             }
-#     #if  topic not found ie its is null(it occurred actually), we will fallback to semantic search using Gemini
-#     # Fallback: send transcript to Gemini for semantic search
-#     transcript_text = "\n".join(
-#         f"[{int(entry.start)//3600:02}:{(int(entry.start)%3600)//60:02}:{int(entry.start)%60:02}] {entry.text}"
-#         for entry in transcript
-#     )
-
-#     response = client.chat.completions.create(
-#         model="google/gemini-2.0-flash-lite-001",
-#         messages=[
-#             {
-#                 "role": "user",
-#                 "content": f"""Here is a YouTube transcript with timestamps:
-
-# {transcript_text}
-
-# Find the first timestamp where this is spoken: "{request.topic}"
-
-# Reply with ONLY the timestamp in HH:MM:SS format. Nothing else. Example: 00:05:47"""
-#             }
-#         ]
-#     )
-
-#     timestamp = response.choices[0].message.content.strip()
-
-#     return {
-#         "timestamp": timestamp,
-#         "video_url": request.video_url,
-#         "topic": request.topic
-#     }

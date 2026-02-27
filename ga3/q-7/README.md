@@ -63,12 +63,9 @@ Smart when complex
 4. In powershell - `ngrok http 8000` (or 8001)
 5. send a curl request from another terminal
 ```bash
-    curl -X POST "http://localhost:8000/ask"   
-    -H "Content-Type: application/json"   
-    -d '{
+    curl -X POST "http://localhost:8000/ask" -H "Content-Type: application/json" -d '{
     "video_url": "https://youtu.be/xxpc-HPKN28",
-    "topic": "And those variables would be your data. But if you chose samples, that you know, just"
-    }'
+    "topic": "And those variables would be your data. But if you chose samples, that you know, just"}'
 ```
 
   expected output:
