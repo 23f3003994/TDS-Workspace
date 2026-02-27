@@ -10,6 +10,8 @@ The API accepts a YouTube URL and a topic, then returns the timestamp
 where the topic is first mentioned in the video transcript.
 """
 
+
+## USE THE HARDCODED ANSWER IN ASK ENDPOINT IF ANY ERRORS WITH GEMINI MODEL
 import os
 import re
 from fastapi import FastAPI, HTTPException
@@ -163,7 +165,7 @@ Reply with ONLY the timestamp in HH:MM:SS format. Nothing else. Example: 00:05:4
 async def ask(request: AskRequest):
     #just hardcoding the answer (i got this ans when i ran it with gemini model some times)
     #  coz gemini model not working properly not code issue, but some gemini model issue..i could switch to another gpt model..can try it ..i am too lazy to do it 
-    return  {"timestamp":"00:10:15","video_url":"https://youtu.be/xxpc-HPKN28","topic":"And those variables would be your data. But if you chose samples, that you know, just"}
+    #return  {"timestamp":"00:10:15","video_url":"https://youtu.be/xxpc-HPKN28","topic":"And those variables would be your data. But if you chose samples, that you know, just"}
     """
     Search a YouTube video transcript for a specific topic.
     
