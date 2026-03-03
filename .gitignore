@@ -23,5 +23,6 @@ Thumbs.db
 .vercel/
 
 **/venv/
+**/dbt_venv/
 **/attendee_checkin_23f3003994.webm
 pat.txt

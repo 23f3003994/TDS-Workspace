@@ -1,0 +1,14 @@
+# sources.yml
+# This file tells dbt about your RAW tables
+# Without this, {{ source() }} won't work!
+version: 2
+
+sources:
+  - name: raw_data                    # this is the "source group name"
+    database: saas_customers
+    schema: main                      # SQLite's default schema
+    description: "Raw tables from our SaaS app"
+
+    tables:
+      - name: raw_customers           # exact table name in SQLite
+        description: "Raw customer signups and cancellations. Very messy!"
