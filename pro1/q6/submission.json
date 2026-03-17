@@ -1,0 +1,6 @@
+{
+  "prompt": "A long industrial factory assembly line photographed from a low diagonal angle, stretching deep into the background. At the far right end, a quality control inspector in a hard hat holds up a flawed product with an alarmed expression, gesturing urgently to the worker beside him. That worker is mid-turn, reaching back to tap the shoulder of the next worker. Further down the line, workers are progressively less aware — turning, then looking up confused, then still working normally, then completely absorbed in their task at the far left. The alert visibly fades with distance. Harsh overhead fluorescent factory lighting, photorealistic, cinematic depth of field, gritty industrial atmosphere, no text, no labels, no diagrams.",
+  "model": "Gemini Nano Banana 2",
+  "concept": "Backpropagation",
+  "metaphor": "A factory defect discovered at the end triggers a correction signal passed backward worker by worker; awareness and urgency fade with distance from the error source."
+}
