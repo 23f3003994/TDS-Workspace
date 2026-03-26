@@ -1,0 +1,61 @@
+question,is_correct
+"What is the Liskov substitution principle?",1
+"What is the purpose of the softmax function in classification?",0
+"What is an abstract syntax tree and how is it used in compilation?",0
+"What is the halting problem and why is it important in computer science?",1
+"What is the difference between accuracy and F1 score?",1
+"What is the difference between synchronous and asynchronous I/O?",1
+"What is the danger of data leakage in machine learning pipelines?",0
+"Verify the following statement: precision is the fraction of predicted positives that are truly positive.",1
+"What does ACID stand for in database transactions?",1
+"Explain what cross-validation is used for.",1
+"Verify the following statement: a convolutional neural network applies learned filters across spatial dimensions of the input.",1
+"How does the CAP theorem constrain distributed database design?",1
+"What is memoisation and when should you use it?",1
+"Explain the concept of eventual consistency in distributed systems.",0
+"How does gradient clipping help training deep neural networks?",1
+"How does the attention mechanism help models handle long-range dependencies?",1
+"What is the difference between depth-first and breadth-first search?",1
+"Explain how federated learning preserves data privacy.",1
+"The following was found online: ""the tcp ip model divides network communication into four abstraction layers"". Assess its accuracy.",1
+"What is a sufficient statistic and why does it matter?",0
+"What does it mean for a function to be pure in functional programming?",1
+"What is the purpose of an index in a relational database?",1
+"What is the purpose of a foreign key constraint?",1
+"What is a kernel trick and why is it used in SVMs?",0
+"How does a generative adversarial network work?",1
+"Explain the concept of tail-call optimisation.",1
+"Explain the concept of idempotency in HTTP methods.",1
+"Explain how skip-gram word embeddings are trained.",1
+"How does reinforcement learning differ from supervised learning?",1
+"How does transformer architecture differ from recurrent neural networks?",1
+"How does the EM algorithm handle latent variables?",0
+"What is a deadlock and what conditions must hold for one to occur?",1
+"How does public key cryptography enable secure communication?",1
+"What is the difference between a type I error and a type II error?",1
+"How does a lock-free data structure avoid the need for mutexes?",1
+"What is the difference between supervised and unsupervised learning?",1
+"How does batch normalisation speed up neural network training?",1
+"The following was found online: ""relational databases organise data into tables with rows and columns linked by foreign keys"". Assess its accuracy.",1
+"True or false: recall is the fraction of actual positives that are correctly identified by the model.",1
+"How does consistent hashing reduce rebalancing in distributed caches?",1
+"The following was found online: ""regularisation techniques such as dropout reduce overfitting in neural networks"". Assess its accuracy.",1
+"Explain how a hash table handles collisions using chaining.",0
+"Describe the difference between precision and recall.",1
+"What is the difference between horizontal and vertical scaling?",1
+"Verify the following statement: the treaty of versailles was signed in nineteen nineteen ending the first world war.",1
+"Explain the concept of overfitting and how to detect it.",1
+"A student claims that the doppler effect describes how the observed frequency of a wave changes with relative motion. Evaluate this claim.",1
+"Explain the difference between optimistic and pessimistic concurrency control.",0
+"What is the difference between L1 and L2 regularisation?",0
+"How does the Floyd-Warshall algorithm compute all-pairs shortest paths?",0
+"What is the role of the learning rate in gradient descent?",1
+"What is the purpose of a validation set in machine learning?",1
+"How does Monte Carlo sampling approximate intractable distributions?",1
+"Describe the MapReduce programming model.",1
+"What is the difference between eager and lazy evaluation?",1
+"A student claims that a decision tree partitions the feature space using axis aligned splits to minimise impurity. Evaluate this claim.",1
+"True or false: the amazon river discharges more freshwater into the ocean than any other river on earth.",1
+"What is the bias-variance tradeoff in statistical modelling?",1
+"Explain the difference between a stack and a queue.",1
+"Based on the following fact — ""an api or application programming interface defines how software components communicate"" — what can be concluded?",1
