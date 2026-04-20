@@ -1,0 +1,78 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10 categories by median session duration</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 16px; }
+    canvas { max-height: 320px; }
+  </style>
+</head>
+<body>
+  <h3>Top 10 categories by median session duration</h3>
+  <canvas id="chart"></canvas>
+  <script>
+    new Chart(document.getElementById('chart'), {"type":"bar","data":{"labels":["Electronics","Automotive","Travel","Apparel","Office","Gaming","Outdoors","Garden","Toys","Health"],"datasets":[{"label":"Top 10 categories by median session duration","data":[8.55,8.96,9.25,10.05,10.07,10.11,10.42,10.76,11.36,11.86],"backgroundColor":["#4e79a7","#f28e2b","#4e79a7","#4e79a7","#4e79a7","#4e79a7","#4e79a7","#4e79a7","#4e79a7","#4e79a7"],"borderColor":"#1f2937","borderWidth":1}]},"options":{"responsive":true,"plugins":{"legend":{"display":false},"title":{"display":true,"text":"Top 10 categories by median session duration"}},"scales":{"y":{"beginAtZero":true}}}});
+  </script>
+</body>
+</html> -->
+
+<!--new-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10 categories by median session duration</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 16px; }
+    canvas { max-height: 320px; }
+  </style>
+</head>
+<body>
+  <h3>Top 10 categories by median session duration</h3>
+  <canvas id="chart"></canvas>
+  <script>
+    new Chart(document.getElementById('chart'), {
+      type: 'bar',
+      data: {
+        labels: ['Books','Beauty','Health','Toys','Garden','Outdoors','Office','Travel','Gaming','Apparel'],
+        datasets: [{
+          label: 'Top 10 categories by median session duration',
+          data: [14.04, 13.46, 13.29, 11.82, 10.43, 9.87, 9.41, 9.31, 9.22, 9.14],
+          backgroundColor: [
+            '#f28e2b',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7',
+            '#4e79a7'
+          ],
+          borderColor: '#1f2937',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Top 10 categories by median session duration'
+          }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

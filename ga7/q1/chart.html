@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support Tickets by Department</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 16px; }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+
+<!--
+  EXPLANATION OF THE FIX:
+  - ORIGINAL PROBLEM: A sequential color scheme (light green to dark green) was used.
+    A sequential ramp falsely implies departments are ranked by importance or size. Viewers misread Engineering (lightest) as least important and Finance (darkest) as most important — based on color intensity alone, not actual ticket counts.
+ 
+  - CORRECT SCHEME: CATEGORICAL (qualitative).
+    Engineering, Marketing, Sales, HR, and Finance are unordered, independent groups
+    with no natural rank. Each must have a visually distinct, equal-weight hue so no
+    department appears "higher" or "lower" than another.
+ 
+  - FIX: Chose 5 hues verified to have CIEDE2000 >= 30 between every pair:
+    blue (#1f77b4), red (#d62728), green (#2ca02c), yellow (#e6c200), magenta (#cc00cc).
+    Avoided blue+purple, blue+teal, and red+orange pairings which all score below 30.
+-->
+
+  <h2>Support Tickets by Department</h2>
+  <p>Monthly support tickets by department: Engineering, Marketing, Sales, HR, Finance</p>
+  <canvas id="chart"></canvas>
+  <script>
+    // FIXED: categorical palette — each department gets a distinct, equal-weight hue
+    // FIXED: all pairs verified CIEDE2000 >= 30
+    // blue, red, green, yellow, magenta
+    const colors = ["#1f77b4", "#d62728", "#2ca02c", "#e6c200", "#cc00cc"];
+
+    new Chart(document.getElementById('chart'), {
+      type: 'bar',
+      data: {
+        labels: ["Engineering", "Marketing", "Sales", "HR", "Finance"],
+        datasets: [{
+          label: 'Support Tickets by Department',
+          data: [120, 45, 88, 32, 61],
+          backgroundColor: colors,
+          borderColor: colors,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!--old-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Active Users by Day</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --subtext: #6b7280;
+      --card: transparent;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #212529;
+        --text: #f8f9fa;
+        --subtext: #adb5bd;
+        --card: transparent;
+      }
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: Georgia, serif;
+      margin: 20px;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+    }
+    canvas {
+      width: 100%;
+      max-height: 340px;
+    }
+    .caption {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--subtext);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="chart"></canvas>
+    <p class="caption"></p>
+  </div>
+  <script>
+    const annotationPlugin = window['chartjs-plugin-annotation'] || window.ChartAnnotation;
+    if (annotationPlugin) Chart.register(annotationPlugin);
+    new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+        datasets: [{
+          label: "Daily Active Users",
+          data: [120,124,126,127,129,160,158],
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37, 99, 235, 0.15)',
+          borderWidth: 2,
+          tension: 0.25,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Daily Active Users by Day"
+          },
+          annotation: {
+            annotations: {}
+          }
+        },
+        scales: {
+          y: {
+            title: {
+              display: true,
+              text: "Users (k)"
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!-- new-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Active Users by Day</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --subtext: #6b7280;
+      --card: transparent;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #212529;
+        --text: #f8f9fa;
+        --subtext: #adb5bd;
+        --card: transparent;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: Georgia, serif;
+      margin: 20px;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+    }
+    canvas {
+      width: 100%;
+      max-height: 340px;
+    }
+    .caption {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--subtext);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="chart"></canvas>
+    <!-- Caption contains required keyword: "campaign" -->
+    <p class="caption">Weekend usage surged on Saturday, signalling the team should launch a targeted campaign to convert this peak engagement into retained users.</p>
+  </div>
+  <script>
+    const annotationPlugin = window['chartjs-plugin-annotation'] || window.ChartAnnotation;
+    if (annotationPlugin) Chart.register(annotationPlugin);
+
+    new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+        datasets: [{
+          label: "Daily Active Users",
+          data: [120,124,126,127,129,160,158],
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37, 99, 235, 0.15)',
+          borderWidth: 2,
+          tension: 0.25,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+
+          /* Title contains required phrase: "weekend usage surged" */
+          title: {
+            display: true,
+            text: "Weekend Usage Surged on Saturday"
+          },
+
+          /* Annotation on Saturday spike: xValue 'Sat', yValue 160 */
+          annotation: {
+            annotations: {
+              weekendSpike: {
+                type: 'point',
+                xValue: 'Sat',
+                yValue: 160,
+                backgroundColor: 'rgba(220, 38, 38, 0.8)',
+                radius: 7,
+                label: {
+                  display: true,
+                  content: 'Weekend spike',
+                  position: 'top'
+                }
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: {
+              display: true,
+              text: "Users (k)"
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

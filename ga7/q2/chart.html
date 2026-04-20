@@ -1,0 +1,172 @@
+<!-- old -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart Measurement 13</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #212529;
+      --subtext: #6c757d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #212529;
+        --text: #f8f9fa;
+        --subtext: #adb5bd;
+      }
+    }
+    body { font-family: sans-serif; margin: 16px; background: var(--bg); color: var(--text); }
+    h2 { font-size: 1rem; margin-bottom: 4px; }
+    p  { font-size: 0.8rem; color: var(--subtext); margin-bottom: 12px; }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+  <h2>Chart Measurement 13</h2>
+  <p>A line chart showing temporal measurements.</p>
+  <canvas id="chart"></canvas>
+  <script>
+    new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ["0:00","1:00","2:00","3:00","4:00","5:00","6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [12,19,3,5,2,3,9,14,21,28,30,25,22,18,15,12,8,5,2,4,8,12,16,20],
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          borderColor: '#111',
+          borderWidth: 5,
+          shadowBlur: 10,
+          shadowColor: 'rgba(0,0,0,0.5)',
+          fontFamily: undefined
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+          subtitle: { display: true, text: 'Chart Measurement 13 - redundant subtitle' },
+          datalabels: { display: true }
+        },
+        scales: {
+          x: {
+            grid: { display: true, drawOnChartArea: true },
+            ticks: { autoSkip: false }
+          },
+          y: {
+            grid: { display: true },
+            ticks: { stepSize: 1 }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!--new-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart Measurement 13</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #212529;
+      --subtext: #6c757d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #212529;
+        --text: #f8f9fa;
+        --subtext: #adb5bd;
+      }
+    }
+    body { font-family: sans-serif; margin: 16px; background: var(--bg); color: var(--text); }
+    h2 { font-size: 1rem; margin-bottom: 4px; }
+    p  { font-size: 0.8rem; color: var(--subtext); margin-bottom: 12px; }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+
+<!--
+  CHARTJUNK REMOVED — Chart Measurement 13
+
+  Ink Waste (IW):
+    - backgroundColor: 'transparent'        (removed pink area fill)
+    - borderWidth: 1.5                       (was 5, heavy border removed)
+    - shadowBlur removed                     (not a Chart.js property, deleted)
+    - shadowColor removed                    (not a Chart.js property, deleted)
+
+  Redundant Encoding (RE):
+    - legend.display: false                  (single-series, legend is redundant)
+    - subtitle.display: false                (repeats the title)
+    - datalabels.display: false              (duplicates Y-axis values)
+
+  Noise Gridlines (NG):
+    - x.grid.display: false                  (vertical gridlines removed)
+    - y.grid.display: false                  (minor horizontal gridlines removed)
+
+  Tick Density (TD):
+    - x.ticks autoSkip:true, maxTicksLimit:6 (was forced all 24 labels)
+    - y.ticks maxTicksLimit:6, stepSize removed (was every integer step)
+-->
+
+  <h2>Chart Measurement 13</h2>
+  <p>A line chart showing temporal measurements.</p>
+  <canvas id="chart"></canvas>
+
+  <script>
+    new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ["0:00","1:00","2:00","3:00","4:00","5:00","6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [12,19,3,5,2,3,9,14,21,28,30,25,22,18,15,12,8,5,2,4,8,12,16,20],
+          backgroundColor: 'transparent',
+          borderColor: '#111',
+          borderWidth: 1.5,
+          pointRadius: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend:     { display: false },
+          subtitle:   { display: false },
+          datalabels: { display: false }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 6
+            }
+          },
+          y: {
+            grid: { display: false },
+            ticks: {
+              maxTicksLimit: 6
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

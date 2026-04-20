@@ -1,0 +1,10 @@
+﻿Doc ID,Domain,Source,Reviewer,Relevance Score,Match Score,Error Flag,Notes
+ DOC-001 , analytics , manual-upload ,  heidi,  9, 14 ,  0 ,reviewed by heidi; batch #2651 
+ DOC-002 , retail ,api-dump,  alice ,7 , 19 , 0 ,reviewed by alice; batch #7812
+ DOC-003 ,  customer-success,web-scrape , ivan , 69,  66,0 , reviewed by ivan; batch #5161
+ DOC-004 , customer-success,  gdrive-export , eve , 78 , 97,0 ,reviewed by eve; batch #5430
+ DOC-005 ,  analytics ,internal-wiki, ivan ,  100, 79 ,  0 , reviewed by ivan; batch #8499 
+ DOC-006 ,infrastructure, web-scrape ,  ivan ,  92, 89 ,0,reviewed by ivan; batch #4699
+ DOC-007 ,security,confluence ,  heidi ,90 , 93,1 , reviewed by heidi; batch #9300 
+ DOC-008 ,analytics , gdrive-export ,  alice,66 , 73 , 0 ,  reviewed by alice; batch #3323
+ DOC-009 ,  infrastructure, web-scrape ,  ivan ,  53,  59,0, reviewed by ivan; batch #8457 

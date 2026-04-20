@@ -1,0 +1,16 @@
+﻿Issue ID,Chart Type,Axis Affected,Description,Error Score,Visibility Score,Is Error,Slide Ref,Notes
+ CE-001 ,heatmap ,  x-axis , Log scale applied without annotation,96,  74 ,  1,slide-11 , detected by linter v3.6; run #708
+ CE-002 ,  scatter ,tooltip ,Y-axis truncated to hide small differences,11 ,  79, 1, slide-29, detected by linter v2.2; run #355
+ CE-003 , heatmap,  data-labels, Source citation present in chart footer ,  92 , 93,0 , slide-15, detected by linter v3.9; run #453 
+ CE-004 ,  scatter,  data-labels , Percentage shares do not sum to 100 ,  82 ,  75 ,  1,  slide-15 , detected by linter v5.7; run #910
+ CE-005 , heatmap,both-axes, Source citation present in chart footer , 61 ,  47 ,0 ,slide-11 ,detected by linter v4.4; run #607 
+ CE-006 , line , none ,Dual-axis with incompatible scales , 34 , 43,1 ,slide-31,  detected by linter v5.9; run #539
+ CE-007 ,  scatter ,x-axis ,Single clear title reflecting main finding,52 , 42 , 0 , slide-29 , detected by linter v5.9; run #651
+ CE-008 , scatter, y-axis , Aspect ratio follows 4:3 best practice ,60 ,61 ,0 , slide-30,detected by linter v5.7; run #973
+ CE-009 , grouped-bar,y-axis ,Inconsistent bar widths within same series,82, 82 ,  1 , slide-05,detected by linter v5.9; run #805 
+ CE-010 ,  area , title ,Log scale applied without annotation, 8, 53,  1,slide-02 ,detected by linter v4.4; run #806 
+ CE-011 , pie ,  title ,  Source citation present in chart footer ,  50 ,95 ,  0,slide-21 , detected by linter v4.9; run #148
+ CE-012 ,line ,  colour-scale,  Area chart stacked without disclosure,77 ,  84 , 1 ,  slide-38, detected by linter v2.8; run #662
+ CE-013 , stacked-bar ,legend,  Percentage shares do not sum to 100, 53 ,15, 1 , slide-19 ,detected by linter v2.5; run #715
+ CE-014 ,grouped-bar , tooltip ,Single clear title reflecting main finding,  60 ,  90 , 0,slide-05 ,detected by linter v5.3; run #343
+ CE-015 ,  grouped-bar,  y-axis,Legend labels do not match data series names, 74 , 96 ,1 , slide-30,detected by linter v4.9; run #472

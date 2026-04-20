@@ -1,0 +1,16 @@
+﻿Issue ID,Slide No.,Category,Description,Reporter,Impact Score,Frequency Score,Is Real,Notes
+ FP-001 , 10 , visual-hierarchy,  Slide title does not match content ,carol,83 ,70,  0,  flagged in round-4 review; ticket #6806
+ FP-002 , 26 ,  data-accuracy , Axis label missing on secondary chart , frank ,  74, 59, 0 ,flagged in round-4 review; ticket #9728
+ FP-003 , 22, chart-choice ,  Bar chart baseline not at zero ,frank , 86,74 ,  1 ,flagged in round-1 review; ticket #9595
+ FP-004 , 18 ,  visual-hierarchy, Colour contrast fails WCAG AA,heidi , 65,43 ,  1,  flagged in round-4 review; ticket #9004 
+ FP-005 ,30,narrative-flow , Font size below 14pt on key slide ,dave,81 ,  65 ,0 , flagged in round-1 review; ticket #2464 
+ FP-006 , 7 ,  chart-choice,Speaker notes absent on complex slide,frank, 8 ,15 , 1,flagged in round-3 review; ticket #3588
+ FP-007 ,4,  annotation ,Inconsistent rounding across slides,grace, 43, 70 ,  1, flagged in round-3 review; ticket #6121
+ FP-008 ,14,  audience-fit , Transition animation distracts from content ,heidi,58,25 ,  1, flagged in round-4 review; ticket #7507 
+ FP-009 ,  18, annotation , Pie chart has more than 6 slices , alice, 85 , 84 , 1,flagged in round-2 review; ticket #4974 
+ FP-010 , 29,  annotation ,Transition animation distracts from content ,  grace ,  81,  58 , 0 , flagged in round-4 review; ticket #5838 
+ FP-011 ,  22,  source-citation, Title slide missing presenter name, bob,  58 ,78,0 ,flagged in round-1 review; ticket #7786 
+ FP-012 ,  5 , narrative-flow, Colour contrast fails WCAG AA,  alice,36 ,  62,  1 , flagged in round-4 review; ticket #8232 
+ FP-013 ,25, annotation,  Inconsistent rounding across slides , carol ,  89,80 , 1,  flagged in round-1 review; ticket #7948
+ FP-014 ,29,  typography , Incorrect percentage in executive summary, eve ,79 ,89,0 ,  flagged in round-1 review; ticket #6946 
+ FP-015 ,27 , chart-choice,Transition animation distracts from content ,  carol, 58,  83 ,1,flagged in round-4 review; ticket #1531

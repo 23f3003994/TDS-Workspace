@@ -1,0 +1,29 @@
+﻿Request ID,CPU Required (cores),RAM Required (GB),Latency Threshold (ms),Priority,Service Tag,Region
+  REQ-0001, 1.8 ,  3.9 ,90 ,Medium,inventory-svc,eu-west-1
+ REQ-0002 ,  1.4 ,  3 , 78,Medium,gateway-svc,us-west-2
+ REQ-0003 , 2.6 , 2.4 , 69 ,Medium,report-svc,ap-south-1
+  REQ-0004 ,1.9 ,  4.9,  96,Medium,notify-svc,us-east-1
+REQ-0005,2.5,  5.4 , 82,Critical,notify-svc,us-west-2
+  REQ-0006 ,  0.5,3.9,79,Low,notify-svc,us-east-1
+REQ-0007 ,  1.5 , 4.3,  77,Low,payment-svc,ap-south-1
+  REQ-0008,  2.7, 1.3 ,73,Low,inventory-svc,us-west-2
+ REQ-0009,  2.1 ,  3.9, 91,High,notify-svc,ap-south-1
+  REQ-0010 ,0.4 ,4,  80 ,Medium,payment-svc,eu-west-1
+REQ-0011 , 0.9 ,  2.7, 68 ,Critical,gateway-svc,eu-west-1
+  REQ-0012 , 0.8 ,2.2 , 73 ,Low,report-svc,us-east-1
+  REQ-0013, 1.6,  2.7 , 66 ,High,auth-svc,ap-south-1
+ REQ-0014 ,1.7, 4.5 , 83 ,Critical,notify-svc,eu-west-1
+ REQ-0015, 1.1 ,4.4,  82,Critical,report-svc,us-west-2
+REQ-0016 ,2.3,4,83,High,inventory-svc,us-east-1
+  REQ-0017 ,2.2 ,  2.1 ,  66 ,High,inventory-svc,us-west-2
+ REQ-0018,1.3 , 3.4 ,  74 ,High,gateway-svc,us-east-1
+REQ-0019, 0.8,  4.4 , 83 ,Medium,notify-svc,eu-west-1
+REQ-0020 ,0.5 ,5.7, 68 ,Low,payment-svc,us-west-2
+  REQ-0021 ,2.7, 7,  83,Critical,payment-svc,us-east-1
+REQ-0022 , 1.9 ,  1.3,  86,High,report-svc,eu-west-1
+  REQ-0023,  0.5 , 5.4 , 65 ,High,gateway-svc,us-west-2
+REQ-0024 ,  2.1 , 1.8 ,  90,Low,report-svc,us-west-2
+REQ-0025 , 1.1, 4.4 ,  75,Low,auth-svc,us-west-2
+ REQ-0026, 1.9 ,  5.8,  105,Critical,notify-svc,us-west-2
+ REQ-0027, 3.2, 4.9 , 78,Medium,notify-svc,ap-south-1
+ REQ-0028 ,0.9, 4.3,97,High,payment-svc,us-west-2

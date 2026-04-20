@@ -1,0 +1,31 @@
+﻿Event ID,Timestamp,Service,Host,Metric,Observed Value,Range Min,Range Max,Notes
+ EV-00001 ,  26/12/2024 22:05 , gateway-svc,host-02 , CPU Usage (%),    54.98 ,  37,55 , auto-collected by monitoring agent; batch #3258 
+ EV-00002 ,  14/09/2024 08:17 ,report-svc ,  host-06 ,Network Latency (ms) ,  65.98 ,46 ,  95, from prometheus scrape; batch #3877 
+ EV-00003 ,11/08/2024 06:34,  payment-svc,host-06,  CPU Usage (%) , 66.98,  55 ,98 ,auto-collected by monitoring agent; batch #1318
+ EV-00004 ,  2024-07-18 09:31:26 ,  payment-svc , host-06, Queue Depth, 37.16 units, 26 ,55 ,sampled at 1-minute interval; batch #1910 
+ EV-00005 ," Apr 22, 2024",inventory-svc,  host-01,Memory Usage (%) ,  35.65 units,29,  79 ,auto-collected by monitoring agent; batch #9855 
+ EV-00006 ,  2024-11-03 21:01:20 ,  notification-svc ,host-04 , Disk I/O (MB/s) ,  18.68 units, 14 ,31, from prometheus scrape; batch #2954
+ EV-00007 ,  2024 Q4 ,notification-svc,  host-04, CPU Usage (%) , 33.65,  31,77 ,via cloudwatch export; batch #9085
+ EV-00008 , 2024-11-25 06:11:47,  auth-svc ,  host-05 ,  Queue Depth, 56.66 units ,50,  77 ,  from prometheus scrape; batch #4803
+ EV-00009 ,"Sep 25, 2024", auth-svc, host-06, Cache Hit Rate (%), 83.54, 55 ,  104,  from prometheus scrape; batch #9835
+ EV-00010 ,31/03/2024 21:24 ,notification-svc, host-07, Network Latency (ms),75.27,  52 ,76 ,sampled at 1-minute interval; batch #1306
+ EV-00011 ,2024 Q4, inventory-svc, host-04 , Memory Usage (%) ,    41.38,19 ,51,  reported by health check; batch #8483
+ EV-00012 ," Jul 26, 2024",  report-svc ,host-06 , Memory Usage (%),72.29 units , 59 , 75 ,  sampled at 1-minute interval; batch #2942
+ EV-00013 ,"  Apr 11, 2024 ",auth-svc ,host-02 , Network Latency (ms) ,   69.60, 46,  75 , auto-collected by monitoring agent; batch #1478
+ EV-00014 ,  07/01/2024 05:57 ,  report-svc,  host-08 , Memory Usage (%),85.57 units ,  42,66,  sampled at 1-minute interval; batch #4069
+ EV-00015 ," Sep 01, 2024",report-svc ,  host-04,Memory Usage (%) ,  80.15, 39,  82,auto-collected by monitoring agent; batch #9786 
+ EV-00016 ,  2024 Q4,  gateway-svc,host-08 ,  Request Rate (req/s),   46.87, 22,  47 , reported by health check; batch #3801
+ EV-00017 ,  18/09/2024 09:33 ,inventory-svc ,host-04 ,Error Rate (%) ,   40.41 , 25, 46 ,from prometheus scrape; batch #5754
+ EV-00018 ,27/06/2024 10:11 ,report-svc ,  host-03 , Queue Depth, 52.75 units, 29,  63 ,from prometheus scrape; batch #4656 
+ EV-00019 ,"Jun 22, 2024 ",inventory-svc ,host-06 ,  Error Rate (%) ,39.84 units,28 , 55, auto-collected by monitoring agent; batch #7229 
+ EV-00020 ,  2024 Q2 ,report-svc, host-07, Queue Depth , 59.41 units ,  49,65,sampled at 1-minute interval; batch #8813 
+ EV-00021 ," Feb 17, 2024 ",inventory-svc ,  host-07 ,Error Rate (%),    72.77 ,  54,  88 , reported by health check; batch #6620
+ EV-00022 ,  02/06/2024 10:05 ,  inventory-svc,  host-08 ,CPU Usage (%),    64.00, 57,80 , reported by health check; batch #7107
+ EV-00023 ,2024-10-30 15:40:36, notification-svc,  host-05 , Memory Usage (%) ,6.59 ,  27,77,  via cloudwatch export; batch #4676 
+ EV-00024 ,  2024 Q3 , gateway-svc, host-07 , Request Rate (req/s) ,    52.85 ,11 ,  48 ,from prometheus scrape; batch #7712 
+ EV-00025 , 2024 Q1 ,payment-svc ,host-02, Network Latency (ms) ,  9.85 units,27,75,  reported by health check; batch #3649 
+ EV-00026 ,  2024 Q4,  auth-svc, host-08, CPU Usage (%) ,  86.09,45 ,90 , auto-collected by monitoring agent; batch #4201 
+ EV-00027 ,2024 Q3,  auth-svc,  host-06 , Network Latency (ms) ,  63.76 , 39,76 , sampled at 1-minute interval; batch #6904
+ EV-00028 ,08/06/2024 22:58,auth-svc ,  host-02,  Queue Depth,    70.64 ,55 ,76,sampled at 1-minute interval; batch #3425 
+ EV-00029 ,17/09/2024 17:10,auth-svc ,host-04 ,  CPU Usage (%), 92.03 ,  55,  77,  reported by health check; batch #5859
+ EV-00030 ,2024 Q4 ,  gateway-svc,host-06, Queue Depth ,  55.72,11,  51 ,auto-collected by monitoring agent; batch #8367
